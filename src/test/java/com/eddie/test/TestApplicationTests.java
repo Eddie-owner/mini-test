@@ -1,5 +1,6 @@
 package com.eddie.test;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.eddie.test.service.DemoService;
 import org.junit.jupiter.api.Test;
@@ -19,11 +20,11 @@ class TestApplicationTests {
 
 	@Test
 	public void test1(){
-		Integer[] arr={3,4};
-
+		Integer[] arr={2,3};
+		System.out.println("Input:"+ JSON.toJSONString(arr));
 		List<Integer> t=Arrays.asList(arr);
 
 		List<String> result=demoService.getWords(t);
-		System.out.println(JSONObject.toJSONString(result));
+		System.out.println("Output:"+JSONObject.toJSONString(result));
 	}
 }
